@@ -4,8 +4,6 @@ url = input('#> Digite o link do video: ')
 
 yt = pytube.YouTube(url)
 
-print('O video está sendo baixado | {yt.title}')
-
-video = yt.streams.first()
+video = yt.streams.get_by_itag(22)
 
 video.download()
